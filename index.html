@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Claude-Skills mit Funki – Mach Claude zu deinem Superhelfer</title>
+<meta name="description" content="Gratis-Anleitungen, fertige Skills und das Boss-Paket – Skill für Skill zu deinem Claude-Superhelfer. Mit Funki.">
+<meta name="theme-color" content="#0a0a1c">
+<meta property="og:title" content="Claude-Skills mit Funki">
+<meta property="og:description" content="Mach Claude zu deinem Superhelfer – Skill für Skill.">
+<meta property="og:image" content="img/og-funki.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preload" href="fonts/PressStart2P.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="fonts/Anton.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<div class="hud" role="status" aria-label="Spielstand">
+ <div class="wrap">
+  <span class="lv" id="lv">START</span>
+  <span><i class="coin"></i><span id="coins">x0000</span></span>
+  <span class="hearts" aria-hidden="true">♥♥♥</span>
+ </div>
+</div>
+
+<header class="hero">
+ <div class="wrap">
+  <span class="chip">CLAUDE-SKILLS MIT FUNKI</span>
+  <h1>Mach Claude zu deinem Superhelfer <em>— Skill für Skill</em></h1>
+  <p class="lead">Gratis-Anleitungen, fertige Skills zum Hochladen und ein Boss-Paket. Vier Level – du fängst unten an und gehst so weit, wie du willst.</p>
+  <div class="stage">
+   <div class="block l" aria-hidden="true">?</div><div class="block r" aria-hidden="true">?</div>
+   <img id="heroFunki" class="funki px" data-anim="stehen" data-ms="420" src="img/funki-stehen_0.png" width="44" height="56" alt="Funki, das orange Pixel-Maskottchen mit goldenen Kopfhörern">
+   <div class="ground" aria-hidden="true"></div>
+  </div>
+  <p style="margin-top:30px"><a id="start" class="btn big" href="#level-1">Spiel starten</a></p>
+ </div>
+</header>
+
+<main>
+<div class="wrap ladder">
+
+ <section class="level rv" id="level-1" data-lv="LEVEL 1/4" data-coins="1" aria-labelledby="h1">
+  <img class="funki mini px" data-anim="zeigen" data-ms="500" src="img/funki-zeigen_0.png" width="44" height="56" alt="">
+  <span class="tag">LEVEL 1 · GRATIS</span>
+  <div class="frame">
+   <h2 id="h1">Gratis-Anleitungen</h2>
+   <p class="d">Zu jedem Video gibt es eine Schritt-für-Schritt-Anleitung als PDF – ohne Kosten. Das Stichwort dazu nennt Funki im jeweiligen Video.</p>
+   <div class="cards">
+    <article class="card l1card" style="grid-column:1/-1">
+     <img class="cv" src="img/cover-p001.webp" width="130" height="231" alt="Cover von Claude-Skills Nr. 001: Top 5 Konnektoren" loading="lazy">
+     <div>
+      <span class="k">VIDEO #001</span>
+      <h3>Top 5 Konnektoren</h3>
+      <p>Wie du Plaud, ElevenLabs, Slack, Microsoft 365 und Gmail mit Claude verbindest: je Konnektor „Wozu?“, die Schritte zum Verbinden und zwei Beispiel-Befehle.</p>
+      <p style="margin-top:12px"><a class="btn" data-link="gratis" href="#bald">Gratis holen</a></p>
+      <div class="note" aria-live="polite"></div>
+     </div>
+    </article>
+   </div>
+  </div>
+ </section>
+
+ <section class="level rv" id="level-2" data-lv="LEVEL 2/4" data-coins="2" aria-labelledby="h2">
+  <span class="tag">LEVEL 2 · EINZEL-SKILL</span>
+  <div class="frame">
+   <h2 id="h2">Fertiger Skill</h2>
+   <div class="price">19–29 €<small>einmalig, je nach Skill</small></div>
+   <p class="d">Ein Skill als ZIP-Datei: in Claude hochladen, Claude richtet ihn selbst ein. Dazu eine ausführliche Anleitung mit Beispielen.</p>
+   <div class="cards">
+    <article class="card"><span class="k">BEISPIEL</span><h3>Postfach-Helfer</h3><p>Fasst ungelesene Mails zusammen und nennt zuerst, was wichtig ist.</p><p class="need">Braucht einen Mail-Konnektor (Gmail oder Microsoft 365).</p></article>
+    <article class="card"><span class="k">BEISPIEL</span><h3>Gesprächs-Protokoll</h3><p>Macht aus einer Aufnahme ein Protokoll mit Aufgaben und Fristen.</p><p class="need">Braucht den Plaud-Konnektor und eine Plaud-Aufnahme.</p></article>
+    <article class="card"><span class="k">BEISPIEL</span><h3>Angebots-Entwurf</h3><p>Erstellt aus Stichworten einen Angebotstext, den du prüfst und anpasst.</p><p class="need">Kein Konnektor nötig.</p></article>
+   </div>
+   <p class="d" style="font-size:14px">Beispiele für geplante Skills – die genaue Auswahl steht zum Start fest.</p>
+   <p style="margin-top:16px"><a class="btn" data-link="einzel" href="#bald">Skill holen</a></p>
+   <div class="note" aria-live="polite"></div>
+  </div>
+ </section>
+
+ <section class="level rv lvl-gold" id="level-3" data-lv="BOSS" data-coins="5" aria-labelledby="h3">
+  <img class="funki mini px" data-anim="jubeln" data-ms="350" src="img/funki-jubeln_0.png" width="44" height="56" alt="">
+  <span class="tag">LEVEL 3 · BOSS-PAKET</span>
+  <div class="frame">
+   <span class="ribbon">BESTES PAKET</span>
+   <h2 id="h3">Boss-Paket</h2>
+   <div class="price">79–99 €<small>einmalig – kein Abo</small></div>
+   <ul class="chk">
+    <li>Alle Skills</li>
+    <li>Alle Anleitungen</li>
+    <li>Updates inklusive</li>
+   </ul>
+   <p><a class="btn big" data-link="paket" href="#bald">Boss-Paket holen</a></p>
+   <div class="note" aria-live="polite"></div>
+  </div>
+ </section>
+
+ <section class="level rv locked" id="level-4" data-lv="LEVEL 4/4" data-coins="0" aria-labelledby="h4">
+  <span class="tag">LEVEL 4 · PROFI · BALD</span>
+  <div class="frame">
+   <h2 id="h4">Profi: K.A.I. &amp; Einrichtung</h2>
+   <p class="d">Für alle, die es nicht selbst einrichten wollen: dein persönlicher Claude-Assistent und Hilfe bei der Einrichtung. Details folgen.</p>
+  </div>
+ </section>
+</div>
+
+<section class="sec">
+ <div class="wrap">
+  <h2 class="t">So funktioniert <span>es</span></h2>
+  <div class="steps">
+   <div class="step rv"><b>Kaufen</b><span>Du holst dir einen Skill oder das Boss-Paket und bekommst eine ZIP-Datei.</span></div>
+   <div class="step rv"><b>ZIP hochladen</b><span>Du lädst die Datei in Claude hoch (in den Claude-Einstellungen).</span></div>
+   <div class="step rv"><b>Claude richtet sich selbst ein</b><span>Claude liest den Skill und sagt dir, was noch zu tun ist.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="faq">
+ <div class="wrap">
+  <h2 class="t">Häufige <span>Fragen</span></h2>
+  <details><summary>Brauche ich Claude Pro?</summary><p>Das hängt von deinem Claude-Tarif ab. Skills hochladen und nutzen ist an bestimmte Tarife gebunden, und Anthropic ändert diese Zuordnung. Schau in deinem Claude-Konto unter „Einstellungen“ nach, ob du Skills hochladen kannst – bevor du kaufst. Die Gratis-Anleitungen in Level 1 brauchen keinen Kauf.</p></details>
+  <details><summary>Funktioniert das auf dem Handy?</summary><p>Diese Seite ja. Ob du Skills in der Claude-App auf dem Handy hochladen oder nutzen kannst, hängt von deinem Claude-Tarif und der App-Version ab. Am sichersten lädst du den Skill einmal am Computer hoch.</p></details>
+  <details><summary>Was ist ein Skill?</summary><p>Ein Skill ist ein Ordner mit Anweisungen (Datei SKILL.md), den Claude bei Bedarf lädt, um eine Aufgabe immer nach demselben Muster zu erledigen – zum Beispiel dein Postfach zusammenzufassen.</p></details>
+  <details><summary>Kann ich widerrufen?</summary><p>Verbrauchern steht ein 14-tägiges Widerrufsrecht zu. Bei digitalen Inhalten erlischt es, wenn du im Bestellvorgang ausdrücklich zustimmst, dass wir vor Ablauf der Frist beginnen, und deine Kenntnis vom Erlöschen bestätigst. Details: <a href="impressum.html#widerruf">Widerrufsbelehrung</a>.</p></details>
+  <details><summary>Gibt es Updates?</summary><p>Das Boss-Paket enthält Updates. Wie es beim Einzel-Skill ist, steht vor dem Kauf auf der jeweiligen Produktseite.</p></details>
+  <details><summary>Ist das ein Angebot von Anthropic?</summary><p>Nein. Das ist ein unabhängiges Angebot von Jan Hettich. Claude ist eine Marke der Anthropic PBC.</p></details>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="wrap">
+  <div class="stagec"><img class="funki px" data-anim="jubeln" data-ms="350" src="img/funki-jubeln_0.png" width="44" height="56" alt="Funki jubelt" style="width:88px;height:112px"></div>
+  <h2>Bereit für Level 1?</h2>
+  <a class="btn big" data-link="gratis" href="#bald">Gratis holen</a>
+  <div class="note" aria-live="polite"></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html#widerruf">Widerruf</a></nav>
+  <p>Kein offizielles Angebot von Anthropic. Claude ist eine Marke der Anthropic PBC.</p>
+ </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
