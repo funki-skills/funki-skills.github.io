@@ -42,11 +42,13 @@
    <h2 id="hf">Anleitung per E-Mail holen</h2>
    <p class="d">Trag dich ein, bestätige deine E-Mail – dann kommt die Anleitung sofort in dein Postfach.</p>
    <div id="brevo-form" data-kommentarwort="verbinden">
-    <form class="optin" onsubmit="return false" novalidate>
+    <form class="optin" data-wort="verbinden" novalidate>
      <label for="em-verbinden">Deine E-Mail-Adresse</label>
-     <input id="em-verbinden" type="email" placeholder="name@beispiel.de" autocomplete="email" disabled>
-     <label class="cb"><input type="checkbox" disabled> <span>Ja, ich möchte die Anleitung und danach gelegentlich Tipps zu Claude per E-Mail erhalten. Ich bestätige meine Anmeldung über einen Link in einer Bestätigungs-E-Mail (Double-Opt-in) und kann mich jederzeit abmelden. Mehr dazu in der <a href="../datenschutz.html#newsletter">Datenschutzerklärung</a>.</span></label>
-     <button class="btn" type="button" aria-disabled="true" disabled>Bald verfügbar</button>
+     <input id="em-verbinden" name="email" type="email" placeholder="name@beispiel.de" autocomplete="email" required disabled>
+     <div class="hp" aria-hidden="true"><label>Website <input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+     <label class="cb"><input name="einwilligung" type="checkbox" required disabled> <span>Ich möchte die Anleitung und gelegentlich Funki-Tipps per E-Mail erhalten. Abmeldung jederzeit. Mehr in der <a href="../datenschutz.html#newsletter">Datenschutzerklärung</a>.</span></label>
+     <button class="btn" type="submit" aria-disabled="true" disabled>Bald verfügbar</button>
+     <p class="note" role="status" aria-live="polite"></p>
     </form>
    </div>
   </div>

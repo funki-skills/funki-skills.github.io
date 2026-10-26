@@ -139,3 +139,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:4px solid #ff
 .optin .btn{justify-self:start}
 .optin .btn[disabled]{background:#4a4866;color:#cfcde6;box-shadow:0 0 0 3px #000,inset -4px -4px 0 #34324c,0 6px 0 3px #000;animation:none;cursor:default}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+
+.optin .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.optin .note{margin-top:0}

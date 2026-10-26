@@ -2,6 +2,7 @@
    Solange ein Wert '#bald' ist, zeigt der Knopf "Bald verfügbar".
    Später z. B. einzel:'https://www.digistore24.com/…', paket:'https://…' */
 const LINKS={einzel:'#bald',paket:'#bald'};
+const WORKER_URL=''; // Adresse des Versand-Workers (https://funki-versand.<konto>.workers.dev) – leer = Formular zeigt „Bald verfügbar“
 const TIKTOK_HANDLE=''; // z. B. '@name' – leer = „Folge Funki auf TikTok“
 /* ========================================================= */
 (function(){
@@ -22,6 +23,27 @@ document.querySelectorAll('[data-link]').forEach(function(a){
     a.addEventListener('click',show);
     a.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')show(e)});
   }else{a.href=url;a.rel='noopener';}
+});
+
+/* Anmeldeformular: nur aktiv, wenn WORKER_URL gesetzt ist */
+document.querySelectorAll('form.optin').forEach(function(f){
+  if(!WORKER_URL)return;
+  var btn=f.querySelector('.btn'),note=f.querySelector('.note'),em=f.elements.email,cb=f.elements.einwilligung;
+  em.disabled=false;cb.disabled=false;btn.disabled=false;btn.removeAttribute('aria-disabled');btn.textContent='Anleitung holen';
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!em.value||!em.checkValidity()){note.textContent='Bitte gib eine gültige E-Mail-Adresse ein.';em.focus();return}
+    if(!cb.checked){note.textContent='Bitte stimme dem E-Mail-Versand zu (Haken setzen).';cb.focus();return}
+    btn.disabled=true;note.textContent='Moment …';
+    fetch(WORKER_URL.replace(/\/$/,'')+'/anmelden',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({email:em.value.trim(),wort:f.getAttribute('data-wort'),einwilligung:true,website:f.elements.website.value})})
+    .then(function(r){return r.json().catch(function(){return{}}).then(function(j){return[r.status,j]})})
+    .then(function(a){
+      if(a[1].ok){location.href=B+'danke/'+(a[1].status==='pdf'?'?s=pdf':'');return}
+      btn.disabled=false;
+      note.textContent=a[0]===429?'Zu viele Versuche – bitte probier es später nochmal.':'Das hat leider nicht geklappt. Bitte prüfe die Adresse und versuche es nochmal.';
+    }).catch(function(){btn.disabled=false;note.textContent='Keine Verbindung – bitte versuche es nochmal.'});
+  });
 });
 
 /* Funki-Animation */
