@@ -233,3 +233,26 @@ html{overflow-x:hidden}
  .mt b{font-size:20px}.mt span{font-size:14px}.mt.gold span{font-size:18px}.mt i{font-size:13px}.mt .st{font-size:8px}
 }
 .mt .st{font-style:normal;display:block}
+/* Shop V3 (26.10. Abend): Wert-Stapel, Vergleich, mitlaufender Knopf am Handy */
+.tier[id]{scroll-margin-top:70px}
+.stapel{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.stapel li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;background:#0c0c22;border:3px solid #3b3a63;box-shadow:0 0 0 2px #000;padding:12px}
+.stapel b{font-family:var(--head);font-weight:400;font-size:20px;text-transform:uppercase;letter-spacing:.5px;display:block;line-height:1.15}
+.stapel div span{color:var(--mute);font-size:15px;line-height:1.45}
+.sb{font-family:var(--pixfont);font-size:8px;line-height:1;padding:7px 6px;box-shadow:0 0 0 2px #000;margin-top:3px}
+.sb.h,b.st-h{background:var(--green);color:#111}.sb.k,b.st-k{background:var(--orange);color:#111}
+b.st-h,b.st-k{font-family:var(--pixfont);font-size:9px;font-weight:400;padding:2px 5px}
+.vs{display:grid;gap:12px;margin-top:14px}
+.vsc{background:#0c0c22;border:3px solid #3b3a63;box-shadow:0 0 0 2px #000;padding:12px 14px}
+.vsc.gold{border-color:var(--gold);background:linear-gradient(#211a3c,#14142e)}
+.vsc b{font-family:var(--pixfont);font-size:10px;color:var(--mute)}.vsc.gold b{color:var(--gold)}
+.vsc ul{margin:8px 0 0 18px;padding:0;color:var(--mute);font-size:15px;line-height:1.5}.vsc.gold ul{color:var(--ink)}
+.shopend{margin-top:-8px}
+.sticky-buy{display:none}
+@media(max-width:759px){
+ .sticky-buy{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#07071aee;border-top:4px solid var(--gold);padding:10px 16px calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .2s}
+ .sticky-buy.an{transform:none}
+ .sticky-buy .btn{display:block;width:100%;font-size:12px;padding:14px 10px}
+ body.hat-sticky footer{padding-bottom:110px}
+}
+@media(min-width:760px){.vs{grid-template-columns:1fr 1fr}.stapel{grid-template-columns:1fr 1fr}}

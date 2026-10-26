@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Fertige Skills für Claude – ZIP hochladen, fertig | Funki-Skills</title>
-<meta name="description" content="Fertige Skills für Claude: Einzel-Skill 24 €, Boss-Paket mit allen Skills 79 €, Für-immer-Paket 199 € – einmalig, kein Abo.">
+<title>Fertige Skills für Claude – Boss-Paket, Handbuch, neue Skills | Funki-Skills</title>
+<meta name="description" content="Fertige Skills für Claude: Einzel-Skill 39 €, Boss-Paket 399 € mit Handbuch und allen neuen Skills für 12 Monate, Für-immer-Paket 1.299 € – einmalig, kein Abo.">
 <meta name="theme-color" content="#0a0a1c">
 <meta property="og:title" content="Fertige Skills für Claude">
-<meta property="og:description" content="Kaufen, ZIP in Claude hochladen, Claude richtet sich selbst ein. Einmalig, kein Abo.">
+<meta property="og:description" content="Skill hochladen, Claude richtet sich selbst ein. Einmalig, kein Abo.">
 <meta property="og:image" content="https://funki-skills.github.io/img/og-funki.png">
 <link rel="icon" type="image/png" href="../favicon.png">
 <link rel="preload" href="../fonts/PressStart2P.ttf" as="font" type="font/ttf" crossorigin>
@@ -24,7 +24,7 @@
 .shophead p.d{font-size:16px}
 </style>
 </head>
-<body data-base="../">
+<body data-base="../" class="hat-sticky">
 <canvas id="stars" aria-hidden="true"></canvas>
 <div class="hud" role="status" aria-label="Spielstand"><div class="wrap">
  <span class="lv" id="lv">FERTIGE SKILLS</span><span><i class="coin"></i><span id="coins">x0000</span></span><span class="hearts" aria-hidden="true">♥♥♥</span>
@@ -34,45 +34,80 @@
  <section class="level rv in shophead" id="produkte" data-lv="SHOP" data-coins="1" aria-labelledby="h">
   <img class="funki mini px" data-anim="zeigen" data-ms="500" src="../img/funki-zeigen_0.png" width="44" height="56" alt="Funki zeigt auf die Preise">
   <span class="tag">FERTIGE SKILLS · SHOP</span>
-  <h1 id="h">Wähl deinen Level</h1>
-  <p class="d">Fertiger Skill statt Anleitung: ZIP-Datei in Claude hochladen, Claude richtet sich selbst ein.</p>
+  <h1 id="h">Claude, das einfach läuft</h1>
+  <p class="d">Schluss mit Ausprobieren: fertige Skills hochladen, Claude richtet sich selbst ein – dazu Funkis komplettes Handbuch.</p>
   <div class="tiers">
-   <article class="tier"><span class="k">EINZEL-SKILL</span><h3>Projekte-Profi</h3><div class="price">24 €<small>einmalig · kein Abo</small></div><p>Ein Skill: Dein Claude-Projekt richtet sich selbst ein – 7 Fragen, 5 Minuten, fertig.</p><ul class="chk"><li>Anweisungen genau auf dich zugeschnitten</li><li>10 Start-Befehle zum Kopieren</li><li>PDF-Anleitung mit Bildern</li></ul><a class="btn" aria-disabled="true" role="button">Bald verfügbar</a><p class="need">Für 1 Person.</p></article>
-   <article class="tier gold"><span class="ribbon">★ FUNKIS EMPFEHLUNG</span><span class="k">ALLE SKILLS</span><h3>Boss-Paket</h3><div class="price">79 €<small>einmalig · kein Abo · neue Skills 12 Monate</small></div><p>Alle fertigen Skills in einem Paket – plus alle neuen Skills der nächsten 12 Monate.</p><ul class="chk"><li>Heute drin: Projekte-Profi</li><li>Jeder neue Skill der nächsten 12 Monate kommt dazu – ohne Aufpreis</li><li>Alle Anleitungen als PDF</li><li>Updates inklusive</li></ul><p class="calc">Bei 24 € pro Einzel-Skill lohnt sich das Paket ab dem 4. Skill.</p><a class="btn" aria-disabled="true" role="button">Bald verfügbar</a><p class="need">Für 1 Person.</p></article>
-   <article class="tier"><span class="k">LEBENSLANG</span><h3>Für-immer-Paket</h3><div class="price">199 €<small>einmalig · kein Abo · neue Skills für immer</small></div><p>Das Boss-Paket – aber jeder neue Skill kommt für immer dazu, nicht nur 12 Monate.</p><ul class="chk"><li>Alles aus dem Boss-Paket</li><li>Jeder neue Skill dazu – für immer, ohne Aufpreis</li><li>Alle neuen Anleitungen als PDF, lebenslang</li><li>Einmal zahlen, nie wieder nachkaufen</li></ul><a class="btn" aria-disabled="true" role="button">Bald verfügbar</a><p class="need">Gilt für dich persönlich, mit deinem Claude-Konto.</p></article>
+   <article class="tier" id="einzel"><span class="k">LEVEL 2 · EINSTIEG</span><h3>Einzel-Skill</h3><div class="price">39 €<small>einmalig · kein Abo · pro Skill</small></div><p>Ein fertiger Skill zum Hochladen – heute: Projekte-Profi. Dein Claude-Projekt richtet sich selbst ein, 7 Fragen, 5 Minuten.</p><ul class="chk"><li>Anweisungen genau auf dich zugeschnitten</li><li>10 Start-Befehle zum Kopieren</li><li>PDF-Anleitung mit Bildern</li></ul><a class="btn" aria-disabled="true" role="button">Bald verfügbar</a><p class="need">Für 1 Person. Ohne neue Skills, ohne Handbuch.</p></article>
+   <article class="tier gold" id="boss"><span class="ribbon">★ FUNKIS EMPFEHLUNG</span><span class="k">LEVEL 3 · ALLES FÜR 12 MONATE</span><h3>Boss-Paket</h3><div class="price">399 €<small>einmalig · kein Abo · neue Skills 12 Monate</small></div><p>Alles, was es heute gibt – und jeder neue Skill der nächsten 12 Monate kommt ohne Aufpreis dazu.</p><ul class="chk"><li>Alle fertigen Skills (heute: Projekte-Profi)</li><li>Funki-Handbuch: alle 51 Anleitungen in einem PDF, über 560 Seiten</li><li>Jeder neue Skill der nächsten 12 Monate</li><li>Kommt dazu, sobald fertig: Befehls-Sammlung und Video-Kurs „Claude von null“</li></ul><p class="calc">Auf 12 Monate gerechnet: rund 1,09 € am Tag.</p><a class="btn" aria-disabled="true" role="button">Bald verfügbar</a><p class="need">Für 1 Person, mit deinem Claude-Konto.</p></article>
+   <article class="tier" id="fuer-immer"><span class="k">LEVEL 4 · LEBENSLANG</span><h3>Für-immer-Paket</h3><div class="price">1.299 €<small>einmalig · kein Abo · alles für immer</small></div><p>Das Boss-Paket ohne Ablaufdatum: jeder neue Skill, jede neue Sammlung, jeder neue Kurs – für immer.</p><ul class="chk"><li>Alles aus dem Boss-Paket</li><li>Jeder neue Skill dazu – ohne Ende, ohne Aufpreis</li><li>Alle künftigen Handbuch-Ausgaben, Sammlungen und Kurse</li><li>Einmal zahlen, nie wieder nachkaufen</li></ul><p class="calc">Zum Vergleich: Wer jedes Jahr das Boss-Paket neu kauft, zahlt nach 4 Jahren 1.596 €.</p><a class="btn" aria-disabled="true" role="button">Bald verfügbar</a><p class="need">Gilt für dich persönlich, mit deinem Claude-Konto.</p></article>
   </div>
-  <p class="tnote"><b>Einmalig · kein Abo.</b> Du brauchst ein Claude-Konto mit Skill-Funktion – das Claude-Abo kostet extra und läuft bei Anthropic.</p>
-  <p class="tbald"><b>Weitere Skills folgen:</b> Neue Skills kommen laufend – zuerst zu den Themen aus Funkis Videos. Im Boss-Paket sind sie 12 Monate dabei, im Für-immer-Paket lebenslang.</p>
+  <p class="tnote"><b>Einmalig · kein Abo · für 1 Person.</b> Du brauchst ein Claude-Konto mit Skill-Funktion – das Claude-Abo kostet extra und läuft bei Anthropic. Alles digital: keine persönliche Einrichtung, keine Telefon-Beratung.</p>
+  <p class="tbald"><b>Weitere Skills folgen:</b> Neue Skills kommen nach und nach – zuerst zu den Themen aus Funkis Videos. Wie viele es werden, steht noch nicht fest.</p>
  </section>
 
- <section class="level rv" data-lv="SO GEHT'S" data-coins="2" aria-labelledby="hs">
+ <section class="level rv" data-lv="INHALT" data-coins="2" aria-labelledby="hw">
+  <span class="tag">WAS DRIN IST</span>
+  <h2 id="hw" class="lh">Das steckt in den Paketen</h2>
+  <p class="d" style="font-size:15px">Ehrlich aufgeteilt: <b class="st-h">HEUTE</b> = fertig, <b class="st-k">KOMMT</b> = in Arbeit, kommt ohne Aufpreis dazu.</p>
+  <ul class="stapel">
+   <li><span class="sb h">HEUTE</span><div><b>Skill „Projekte-Profi“</b><span>Dein Claude-Projekt richtet sich selbst ein – mit PDF-Anleitung.</span></div></li>
+   <li><span class="sb h">HEUTE</span><div><b>Funki-Handbuch</b><span>Alle 51 Anleitungen aus den Videos in einem PDF – über 560 Seiten, mit Lesezeichen zum Springen. Die Einzel-Anleitungen bleiben gratis.</span></div></li>
+   <li><span class="sb k">KOMMT</span><div><b>Neue Skills</b><span>Jeder neue Skill kommt ohne Aufpreis dazu – im Boss-Paket 12 Monate, im Für-immer-Paket für immer.</span></div></li>
+   <li><span class="sb k">KOMMT</span><div><b>Befehls-Sammlung</b><span>Die besten Befehle aus allen Videos zum Kopieren, nach Themen sortiert.</span></div></li>
+   <li><span class="sb k">KOMMT</span><div><b>Video-Kurs „Claude von null“</b><span>Funkis Videos in sinnvoller Reihenfolge, vom ersten Chat bis zum eigenen Skill.</span></div></li>
+  </ul>
+ </section>
+
+ <section class="level rv" data-lv="WARUM" data-coins="3" aria-labelledby="hy">
+  <span class="tag">WARUM DAS BOSS-PAKET</span>
+  <h2 id="hy" class="lh">Ohne Paket vs. mit Paket</h2>
+  <div class="vs">
+   <div class="vsc"><b>Ohne</b><ul><li>Jedes Video einzeln suchen, jede Anleitung einzeln holen</li><li>Befehle selbst zusammenbasteln</li><li>Neue Funktionen? Selbst herausfinden</li></ul></div>
+   <div class="vsc gold"><b>Mit Boss-Paket</b><ul><li>Alles an einem Ort, in einem Handbuch</li><li>Fertige Skills: hochladen, Claude richtet sich selbst ein</li><li>Neue Skills kommen 12 Monate von allein dazu</li></ul></div>
+  </div>
+ </section>
+
+ <section class="level rv" data-lv="SO GEHT'S" data-coins="4" aria-labelledby="hs">
   <span class="tag">IN 3 SCHRITTEN</span>
   <h2 id="hs" class="lh">So kommst du zum Skill</h2>
   <div class="steps s3">
-   <div class="step"><b>Kaufen</b><span>Du bezahlst sicher über Digistore24 und lädst die ZIP-Datei sofort herunter.</span></div>
+   <div class="step"><b>Kaufen</b><span>Du bezahlst sicher im Funki-Shop (PayPal oder Karte). Download sofort nach dem Kauf.</span></div>
    <div class="step"><b>ZIP in Claude hochladen</b><span>In Claude unter „Skills“ die ZIP-Datei hochladen – nicht entpacken.</span></div>
    <div class="step"><b>Claude richtet sich selbst ein</b><span>Ein Satz an Claude, den Rest macht der Skill für dich.</span></div>
   </div>
  </section>
 
- <section class="level rv" data-lv="FAQ" data-coins="3" aria-labelledby="hq">
+ <section class="level rv" data-lv="FAQ" data-coins="5" aria-labelledby="hq">
   <span class="tag">KURZE ANTWORTEN</span>
   <h2 id="hq" class="lh">Häufige Fragen</h2>
   <div class="faq">
+   <details><summary>399 € – ist das nicht viel?</summary><p>Auf 12 Monate gerechnet sind es rund 1,09 € am Tag. Dafür bekommst du alles, was es heute gibt, das komplette Handbuch und jeden neuen Skill der nächsten 12 Monate. Wenn du nur einen Skill willst, reicht der Einzel-Skill für 39 €.</p></details>
+   <details><summary>Was ist heute schon fertig?</summary><p>Der Skill „Projekte-Profi“ und das Funki-Handbuch mit allen 51 Anleitungen (über 560 Seiten). Befehls-Sammlung, Video-Kurs und weitere Skills sind in Arbeit und kommen ohne Aufpreis dazu. Wie viele neue Skills es werden, steht noch nicht fest.</p></details>
+   <details><summary>Boss-Paket oder Für-immer-Paket?</summary><p>Beide enthalten alles, was es beim Kauf gibt. Im Boss-Paket kommen neue Skills 12 Monate lang dazu, im Für-immer-Paket ohne Ende – dazu alle künftigen Handbuch-Ausgaben, Sammlungen und Kurse.</p></details>
    <details><summary>Brauche ich Claude Pro?</summary><p>Das hängt von deinem Tarif ab. Laut Claude-Hilfe sind eigene Skills für Pro, Max, Team und Enterprise verfügbar, ein Hilfe-Artikel nennt auch Free. Dazu muss „Code-Ausführung und Dateierstellung“ eingeschaltet sein. Maßgeblich ist, was in deinem Konto angezeigt wird: Siehst du dort „Skills“, kannst du hochladen.</p></details>
-   <details><summary>Was ist im Boss-Paket?</summary><p>Alle fertigen Skills, die es gibt – heute der Projekte-Profi – und jeder neue Skill der nächsten 12 Monate, ohne Aufpreis. Bei 24 € pro Einzel-Skill lohnt es sich ab dem 4. Skill.</p></details>
-   <details><summary>Boss-Paket oder Für-immer-Paket?</summary><p>Beide enthalten alle Skills, die es beim Kauf gibt. Im Boss-Paket bekommst du dazu alle neuen Skills der nächsten 12 Monate. Im Für-immer-Paket bekommst du jeden neuen Skill – ohne Ende und ohne Aufpreis.</p></details>
+   <details><summary>Bekomme ich persönliche Hilfe?</summary><p>Nein – alles ist digital und zum Selbermachen: Jeder Skill hat eine bebilderte PDF-Anleitung, und Claude führt dich durch die Einrichtung. Eine persönliche Einrichtung oder Telefon-Beratung gibt es nicht.</p></details>
+   <details><summary>Muss ich programmieren?</summary><p>Nein. Ein Skill ist ein Textpaket. Du lädst die ZIP-Datei hoch und schreibst Claude einen Satz.</p></details>
    <details><summary>Funktioniert das am Handy?</summary><p>Hochladen geht am Rechner (claude.ai im Browser oder Desktop-App). Danach ist der Skill in deinem Konto; was in der Handy-App angezeigt wird, entscheidet Anthropic und kann sich ändern.</p></details>
-   <details><summary>Kann ich widerrufen?</summary><p>Der Kauf läuft über Digistore24. Bei digitalen Produkten kann das Widerrufsrecht erlöschen, wenn du im Bestellvorgang ausdrücklich zustimmst, dass sofort geliefert wird. Die genaue Belehrung zeigt dir Digistore24 beim Kauf. Mehr dazu: <a href="../impressum.html#widerruf">Widerruf</a>.</p></details>
+   <details><summary>Kann ich widerrufen?</summary><p>Bei digitalen Inhalten erlischt das Widerrufsrecht nur, wenn du im Bestellvorgang ausdrücklich zustimmst, dass sofort geliefert wird. Die Widerrufsbelehrung siehst du im Shop vor dem Kauf. Mehr dazu: <a href="../impressum.html#widerruf">Widerruf</a>.</p></details>
   </div>
+ </section>
+
+ <section class="level rv shopend" data-lv="START" data-coins="6" aria-label="Paket wählen">
+  <p class="d" style="text-align:center">Bereit für den nächsten Level?</p>
+  <p style="text-align:center;margin-top:10px"><a class="btn big" href="#boss">Zum Boss-Paket</a></p>
  </section>
 
  <p class="d" style="text-align:center;margin:10px 0 0;font-size:14px">Kein offizielles Angebot von Anthropic. Claude ist eine Marke der Anthropic PBC.</p>
 </main>
+<div class="sticky-buy" id="sticky" aria-hidden="true"><a class="btn" href="#boss" tabindex="-1">Boss-Paket · 399 €</a></div>
 <footer><div class="wrap">
  <nav aria-label="Rechtliches"><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a><a href="../impressum.html#widerruf">Widerruf</a></nav>
  <p>Kein offizielles Angebot von Anthropic. Claude ist eine Marke der Anthropic PBC.</p>
 </div></footer>
 <script src="../app.js"></script>
+<script>
+(function(){var s=document.getElementById('sticky'),t=document.querySelector('.tiers');if(!s||!t||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(en){var v=en[0].isIntersecting;s.classList.toggle('an',!v);s.setAttribute('aria-hidden',v?'true':'false')}).observe(t);})();
+</script>
 </body>
 </html>
