@@ -1,0 +1,15 @@
+[
+  {
+    "id": "mem-skills-kanal-kommentarwort-eindeutig-----0",
+    "key": "-",
+    "content": "name: skills-kanal-kommentarwort-eindeutig\ndescription: Claude-Skills-Kanal: Kommentarwort pro Video muss global eindeutig sein, vor der Stimme gegen alle video.json prüfen\nmetadata:\n  type: feedback\n---\nKommentarwort (video.json) darf in keinem anderen Video vorkommen (Landingpage-Hash = Wort+Salt, Kommentar löst genau ein PDF aus).\n\n**Why:** P033 hieß zuerst TABELLE wie P018; Stimme musste neu erzeugt werden (+1075 ElevenLabs-Credits).\n**How to apply:** vor tts/ElevenLabs alle `kommentarwort`…",
+    "summary": "---",
+    "namespace": "skills-kanal-kommentarwort-eindeutig",
+    "type": "semantic",
+    "metadata": {
+      "sourceFile": "/Users/jan/.claude/projects/-Users-jan-TikTok-2026-11-Claude-Skills-website-repo/memory/skills-kanal-kommentarwort-eindeutig.md",
+      "bootstrapped": true
+    },
+    "createdAt": 1793043097713
+  }
+]

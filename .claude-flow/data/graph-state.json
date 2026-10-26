@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "updatedAt": 1793043097714,
+  "nodeCount": 1,
+  "contentFingerprint": "7264a07f_5aa4c80a_68",
+  "nodes": {
+    "mem-skills-kanal-kommentarwort-eindeutig-----0": {
+      "id": "mem-skills-kanal-kommentarwort-eindeutig-----0",
+      "category": "skills-kanal-kommentarwort-eindeutig",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1793043097713
+    }
+  },
+  "edges": [],
+  "pageRanks": {
+    "mem-skills-kanal-kommentarwort-eindeutig-----0": 1
+  }
+}

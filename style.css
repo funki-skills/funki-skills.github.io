@@ -142,3 +142,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:4px solid #ff
 
 .optin .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .optin .note{margin-top:0}
+/* Katalog kompakt (26.10.) */
+.katalog{margin-top:16px}
+.kat-cta{text-align:center;margin:4px 0 18px}
+.kat{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kt{background:#0c0c22;border:3px solid #3b3a63;box-shadow:0 0 0 2px #000;padding:6px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.kt img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border:2px solid var(--gold)}
+.kt .k{font-family:var(--pixfont);font-size:8px;color:var(--gold)}
+.kt h3{font-size:12.5px;line-height:1.25;font-weight:700;overflow-wrap:anywhere}
+.kat-mehr{margin-top:14px}
+.kat-mehr summary{font-family:var(--pixfont);font-size:11px;color:#111;background:var(--gold);text-align:center;padding:14px 12px;box-shadow:0 0 0 3px #000;min-height:0}
+.kat-mehr[open] summary{margin-bottom:14px}
+@media(min-width:700px){.kat{grid-template-columns:repeat(6,1fr)}.kt h3{font-size:13.5px}}
+h1,h2,.lh{overflow-wrap:break-word;hyphens:auto}
+.kat-mehr summary:after{color:#111;top:11px}
