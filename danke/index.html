@@ -16,7 +16,8 @@
   <img class="funki mini px" data-anim="jubeln" data-ms="350" src="../img/funki-jubeln_0.png" width="44" height="56" alt="Funki jubelt">
   <div class="frame">
    <h1 id="dt" style="font-size:clamp(30px,8vw,52px)">Fast geschafft – bestätige deine E-Mail</h1>
-   <p class="d" id="dx">Ich habe dir gerade eine E-Mail geschickt. Klick darin auf „Ja, E-Mail bestätigen“ – dann schicke ich dir die Anleitung sofort. Schau auch im Spam-Ordner nach.</p>
+   <p class="d" id="dx">Ich habe dir gerade eine E-Mail geschickt. Klick darin auf „Ja, schick mir die Anleitung!“ – dann bekommst du sie sofort. Schau auch im Spam-Ordner nach.</p>
+   <p id="dl" style="margin-top:18px;display:none"><a class="btn" id="dlb" href="#" style="font-size:1.15em">📥 PDF jetzt öffnen</a></p>
    <p style="margin-top:16px"><a class="btn" href="../index.html#level-1">← Alle Anleitungen</a></p>
   </div>
  </section>
@@ -26,8 +27,8 @@
  <p>Kein offizielles Angebot von Anthropic. Claude ist eine Marke der Anthropic PBC.</p>
 </div></footer>
 <script>
-(function(){var s=new URLSearchParams(location.search).get('s'),t=document.getElementById('dt'),x=document.getElementById('dx');
-var T={pdf:['Deine Anleitung ist unterwegs','Die PDF ist in deinem Postfach oder in wenigen Minuten da. Schau auch im Spam-Ordner nach.'],
+(function(){var q=new URLSearchParams(location.search),s=q.get('s'),pl=q.get('pdf');if(s==='pdf'&&pl&&/^https:\/\/funki-versand\.[a-z0-9-]+\.workers\.dev\/pdf\//.test(pl)){document.getElementById('dlb').href=pl;document.getElementById('dl').style.display='block';}var t=document.getElementById('dt'),x=document.getElementById('dx');
+var T={pdf:['✅ Bestätigt – deine Anleitung ist da!','Du kannst sie hier direkt öffnen. Zusätzlich liegt sie als PDF in deinem Postfach (schau auch im Spam-Ordner).'],
 offen:['Noch nicht bestätigt','Wir haben deine Bestätigung noch nicht gefunden. Klick bitte auf den Link in der Bestätigungs-E-Mail und versuche es dann nochmal.'],
 fehler:['Das hat leider nicht geklappt','Der Link ist abgelaufen oder ungültig. Trag dich bitte auf der Anleitungs-Seite nochmal ein.']};
 if(T[s]){t.textContent=T[s][0];x.textContent=T[s][1]}})();
