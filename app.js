@@ -2,7 +2,7 @@
    Solange ein Wert '#bald' ist, zeigt der Knopf "Bald verfügbar".
    Später z. B. einzel:'https://www.digistore24.com/…', paket:'https://…' */
 const LINKS={einzel:'#bald',paket:'#bald'};
-const WORKER_URL=''; // Adresse des Versand-Workers (https://funki-versand.<konto>.workers.dev) – leer = Formular zeigt „Bald verfügbar“
+const WORKER_URL='https://funki-versand.funki-versand.workers.dev'; // Adresse des Versand-Workers (https://funki-versand.<konto>.workers.dev) – leer = Formular zeigt „Bald verfügbar“
 const TIKTOK_HANDLE=''; // z. B. '@name' – leer = „Folge Funki auf TikTok“
 /* ========================================================= */
 (function(){
