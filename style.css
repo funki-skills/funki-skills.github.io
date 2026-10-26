@@ -102,7 +102,7 @@ footer{background:#06060f;border-top:4px solid var(--gold);padding:26px 0 40px;f
 footer nav{display:flex;flex-wrap:wrap;gap:8px 22px;margin-bottom:14px;font-family:var(--pixfont);font-size:10px;line-height:2}
 footer p{max-width:640px}
 /* Rechtliches */
-.legal{padding:34px 0 50px}
+.legal{padding:34px 18px 50px}
 .legal h1{font-size:clamp(34px,9vw,56px);margin-bottom:20px}
 .legal h2{font-family:var(--head);font-weight:400;font-size:26px;text-transform:uppercase;color:var(--gold);margin:26px 0 8px}
 .legal p,.legal li{color:#d8d6ea;margin:8px 0}
