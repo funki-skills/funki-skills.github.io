@@ -1,12 +1,13 @@
 /* ===== KONFIGURATION: alle Kauf-Links an EINER Stelle =====
    Solange ein Wert '#bald' ist, zeigt der Knopf "Bald verfügbar".
-   Später z. B. gratis:'https://…', einzel:'https://www.digistore24.com/…', paket:'https://…' */
-const LINKS={gratis:'#bald',einzel:'#bald',paket:'#bald'};
+   Später z. B. einzel:'https://www.digistore24.com/…', paket:'https://…' */
+const LINKS={einzel:'#bald',paket:'#bald'};
 const TIKTOK_HANDLE=''; // z. B. '@name' – leer = „Folge Funki auf TikTok“
 /* ========================================================= */
 (function(){
 'use strict';
 var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var B=document.body.getAttribute('data-base')||''; // '../' auf Landingpages
 
 /* Kauf-Knöpfe */
 var follow=TIKTOK_HANDLE?('Folge '+TIKTOK_HANDLE+' auf TikTok'):'Folge Funki auf TikTok';
@@ -25,11 +26,11 @@ document.querySelectorAll('[data-link]').forEach(function(a){
 
 /* Funki-Animation */
 var FR={stehen:3,laufen:4,jubeln:2,zeigen:2,tippen:2};
-Object.keys(FR).forEach(function(k){for(var i=0;i<FR[k];i++){var im=new Image();im.src='img/funki-'+k+'_'+i+'.png'}});
+Object.keys(FR).forEach(function(k){for(var i=0;i<FR[k];i++){var im=new Image();im.src=B+'img/funki-'+k+'_'+i+'.png'}});
 document.querySelectorAll('img.funki').forEach(function(img){
   var a=img.getAttribute('data-anim'),n=FR[a],i=0,t=+img.getAttribute('data-ms')||260;
   if(RM||!n)return;
-  setInterval(function(){i=(i+1)%n;img.src='img/funki-'+a+'_'+i+'.png'},t);
+  setInterval(function(){i=(i+1)%n;img.src=B+'img/funki-'+a+'_'+i+'.png'},t);
 });
 var hero=document.getElementById('heroFunki');
 function setAnim(img,a){img.setAttribute('data-anim',a)}
@@ -52,7 +53,8 @@ document.querySelectorAll('.rv,[data-lv]').forEach(function(e){io.observe(e)});
 if(RM)document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});
 
 /* Spiel starten */
-document.getElementById('start').addEventListener('click',function(e){
+var st=document.getElementById('start');
+if(st)st.addEventListener('click',function(e){
   e.preventDefault();coins(5);
   if(hero&&!RM){setAnim(hero,'jubeln');setTimeout(function(){setAnim(hero,'stehen')},900)}
   document.getElementById('level-1').scrollIntoView({behavior:RM?'auto':'smooth'});
