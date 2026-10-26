@@ -156,3 +156,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:4px solid #ff
 @media(min-width:700px){.kat{grid-template-columns:repeat(6,1fr)}.kt h3{font-size:13.5px}}
 h1,h2,.lh{overflow-wrap:break-word;hyphens:auto}
 .kat-mehr summary:after{color:#111;top:11px}
+.kat-mehr summary{padding-right:34px}
+.hero h1{font-size:clamp(32px,9.6vw,84px)}
+html{overflow-x:hidden}
