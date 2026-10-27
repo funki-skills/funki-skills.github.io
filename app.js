@@ -59,7 +59,10 @@ function setAnim(img,a){img.setAttribute('data-anim',a)}
 
 /* HUD: Level + Münzen */
 var coinN=+(sessionStorage.getItem('fk-coins')||0),coinEl=document.getElementById('coins'),lvEl=document.getElementById('lv');
-function draw(){coinEl.textContent='x'+String(coinN).padStart(4,'0')}
+var coinBasis=0;
+function draw(){coinEl.textContent='x'+String(coinBasis+coinN).padStart(4,'0')}
+/* Münzen = echte Besuche aller Spieler bisher (anonym gezählt) + deine eingesammelten */
+try{fetch(WORKER_URL+'/z-summe').then(function(r){return r.json()}).then(function(j){if(j&&j.n>0){coinBasis=j.n;draw();coinEl.parentNode&&coinEl.parentNode.setAttribute('title',j.n+' Besuche bisher')}}).catch(function(){})}catch(e){}
 function coins(d){coinN+=d;draw();try{sessionStorage.setItem('fk-coins',coinN)}catch(e){}
   var c=document.querySelector('.hud .coin');c.classList.remove('pop');void c.offsetWidth;c.classList.add('pop')}
 draw();
