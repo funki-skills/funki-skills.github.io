@@ -104,3 +104,6 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden&&!RM
 var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(size,150)});
 size();if(!RM)requestAnimationFrame(frame);
 })();
+
+/* Besucherzaehler (anonym, ohne Cookies) */
+try{fetch(WORKER_URL+'/z',{method:'POST',keepalive:true,headers:{'content-type':'application/json'},body:JSON.stringify({p:location.pathname,r:document.referrer})})}catch(e){}
